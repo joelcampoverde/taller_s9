@@ -1,0 +1,40 @@
+@startuml
+
+class Persona {
+  nombres : string
+  cedula:string
+}
+
+class Estudiante {
+   id_matricula:string
+   nombre:string
+   cedula:string
+   genero:string
+   direccion:string
+}
+
+class Repositorio_Estudiante {
+    Estudiante : List
+
+    + buscar(id_matricula): estudiante
+    + agregar () : boolean
+    + editar () : boolean
+    + eliminar () : boolean
+}
+
+class CasoUso_Estudiante{
+    Estudiante: object
+    repositorioEmpleado: object
+
+    void constructor(repositorioEstudiante)
+    + buscar(id_matricula): estudiante
+    + agregar () : boolean
+    + editar () : boolean
+    + eliminar () : boolean
+
+
+}
+
+Persona <|-- Estudiante
+Repositorio_Estudiante *-- CasoUso_Estudiante
+@enduml
